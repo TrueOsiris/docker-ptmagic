@@ -1,7 +1,8 @@
 FROM ubuntu:17.10
 MAINTAINER tim@chaubet.be
 
-### aptitude & curl
+### aptitude & curl ###
+
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && apt-get install -y net-tools \
                        iputils-ping \
@@ -9,7 +10,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg \
  && mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg 
 
-### dotnet
+
+### dotnet ###
+
 RUN sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-artful-prod artful main" > /etc/apt/sources.list.d/dotnetdev.list' \
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && apt-get install dotnet-sdk-2.1.3
