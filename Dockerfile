@@ -10,6 +10,8 @@ RUN apt-get update \
 
 VOLUME ["/mnt/profittrailer","/mnt/ptmagic"]
 
+CMD ["ping 10.10.0.1"]
+
 
 #FROM microsoft/aspnetcore-build:2.0 AS build-env
 ### https://docs.docker.com/engine/examples/dotnetcore/#prerequisites
