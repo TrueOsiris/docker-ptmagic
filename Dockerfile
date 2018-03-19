@@ -2,7 +2,7 @@ FROM ubuntu:17.10
 MAINTAINER tim@chaubet.be
 
 ### aptitude & curl
-RUN apt-get update \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && apt-get install -y net-tools \
                        iputils-ping \
                        curl \
@@ -11,7 +11,7 @@ RUN apt-get update \
 
 ### dotnet
 RUN sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-artful-prod artful main" > /etc/apt/sources.list.d/dotnetdev.list' \
- && apt-get update \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && apt-get install dotnet-sdk-2.1.3
 
 VOLUME ["/mnt/profittrailer","/mnt/ptmagic"]
