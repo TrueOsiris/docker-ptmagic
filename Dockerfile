@@ -1,4 +1,5 @@
 FROM ubuntu:18.10
+MAINTAINER tim@chaubet.be
 
 #FROM microsoft/aspnetcore-build:2.0 AS build-env
 ### https://docs.docker.com/engine/examples/dotnetcore/#prerequisites
