@@ -10,7 +10,7 @@ RUN apt-get update \
 
 VOLUME ["/mnt/profittrailer","/mnt/ptmagic"]
 
-CMD ["/bin/ping 10.10.0.1"]
+CMD ["/bin/ping", "10.10.0.1"]
 
 
 #FROM microsoft/aspnetcore-build:2.0 AS build-env
