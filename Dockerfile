@@ -13,6 +13,13 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-artful-prod artful main" > /etc/apt/sources.list.d/dotnetdev.list' \
  && DEBIAN_FRONTEND=noninteractive apt-get update \
  && apt-get install -y dotnet-sdk-2.1.3
+ 
+RUN mkdir -p /opt/pt-magic/ptm-binance-v1.3.1 \
+ && cd /opt/pt-magic/ptm-binance-v1.3.1 \
+ && wget https://github.com/Legedric/ptmagic/releases/download/1.3.1/PTMagic.1.3.1.zip \
+ && unzip *.zip \
+ && mv PTMagic\ 1.3.1/* . \
+ && mv PTMagic/* .
 
 VOLUME ["/mnt/profittrailer","/mnt/ptmagic"]
 
