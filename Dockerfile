@@ -3,7 +3,9 @@ MAINTAINER tim@chaubet.be
 
 # Update Ubuntu Software repository
 RUN apt-get update \
- && apt-get install -y  nginx
+ && apt-get install -y net-tools \
+                       iputils-ping 
+ #nginx
  #\
  #                       php7.0-fpm \
  #                       supervisor \
