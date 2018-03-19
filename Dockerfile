@@ -1,21 +1,23 @@
-FROM microsoft/aspnetcore-build:2.0 AS build-env
+FROM ubuntu:18.10
+
+#FROM microsoft/aspnetcore-build:2.0 AS build-env
 ### https://docs.docker.com/engine/examples/dotnetcore/#prerequisites
 
-WORKDIR /app
+#WORKDIR /app
 
 # Copy csproj and restore as distinct layers
-COPY *.csproj ./
-RUN dotnet restore
+#COPY *.csproj ./
+#RUN dotnet restore
 
 # Copy everything else and build
-COPY . ./
-RUN dotnet publish -c Release -o out
+#COPY . ./
+#RUN dotnet publish -c Release -o out
 
 # Build runtime image
-FROM microsoft/aspnetcore:2.0
-WORKDIR /app
-COPY --from=build-env /app/out .
-ENTRYPOINT ["dotnet", "aspnetapp.dll"]
+#FROM microsoft/aspnetcore:2.0
+#WORKDIR /app
+#COPY --from=build-env /app/out .
+#ENTRYPOINT ["dotnet", "aspnetapp.dll"]
 
 
 #ENV PT_DL=https://github.com/Legedric/ptmagic/releases/download/1.3.1/PTMagic.1.3.1.zip
