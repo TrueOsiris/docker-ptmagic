@@ -1,14 +1,9 @@
 FROM ubuntu:17.10
 MAINTAINER tim@chaubet.be
 
-# Update Ubuntu Software repository
 RUN apt-get update \
  && apt-get install -y net-tools \
                        iputils-ping 
- #nginx
- #\
- #                       php7.0-fpm \
- #                       supervisor \
 
 VOLUME ["/mnt/profittrailer","/mnt/ptmagic"]
 
