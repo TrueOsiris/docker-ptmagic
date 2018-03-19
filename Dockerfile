@@ -3,7 +3,10 @@ MAINTAINER tim@chaubet.be
 
 RUN apt-get update \
  && apt-get install -y net-tools \
-                       iputils-ping 
+                       iputils-ping \
+                       curl \
+ && curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg \
+ && mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 
 VOLUME ["/mnt/profittrailer","/mnt/ptmagic"]
 
