@@ -1,4 +1,4 @@
-FROM ubuntu:18.10
+FROM ubuntu:17.10
 MAINTAINER tim@chaubet.be
 
 # Update Ubuntu Software repository
