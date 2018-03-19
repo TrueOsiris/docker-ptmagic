@@ -4,7 +4,7 @@ MAINTAINER tim@chaubet.be
 # Update Ubuntu Software repository
 RUN apt-get update
 
-VOLUME /mnt/profittrailer
+VOLUME ["/mnt/profittrailer","/mnt/ptmagic"]
 
 
 #FROM microsoft/aspnetcore-build:2.0 AS build-env
