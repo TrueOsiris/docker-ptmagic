@@ -29,5 +29,5 @@ VOLUME ["/mnt/profittrailer","/mnt/ptmagic"]
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-CMD bash
+#CMD bash
 #CMD ["/bin/ping", "10.10.0.1"]
