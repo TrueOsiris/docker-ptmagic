@@ -7,9 +7,9 @@ https://profittrailer.com/ \
 http://nidkil.me/2018/02/19/pt-magic-setup-on-ubuntu-17-10
 
 ## Assumptions
-- a running profittrailer (I use the docker container rafffael/profit-trailer) 
-- an accessible profittrailer folder that is accessible via the volume 
-- trading.logHistory = 9999 in ProfitTrailers application.properties
+- A running profittrailer (I use the docker container rafffael/profit-trailer) 
+- Full profittrailer folder accessibility via the docker volume /mnt/profittrailer
+- Set trading.logHistory = 9999 in ProfitTrailers application.properties
 
 ## Optional
 ### Setup Telegram
