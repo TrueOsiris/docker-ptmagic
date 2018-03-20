@@ -7,13 +7,13 @@ https://profittrailer.com/ \
 http://nidkil.me/2018/02/19/pt-magic-setup-on-ubuntu-17-10
 
 ## Assumptions
-- a running profittrailer (I use the docker container rafffael/profit-trailer) \
-- an accessible profittrailer folder that is accessible via the volume \
+- a running profittrailer (I use the docker container rafffael/profit-trailer) 
+- an accessible profittrailer folder that is accessible via the volume 
 - trading.logHistory = 9999 in ProfitTrailers application.properties
 
 ## Optional
 ### Setup Telegram
-First we need to setup a Telegram bot so PTM can send Telegram messages. 
+Setup a Telegram bot so PTM can send Telegram messages. 
 
 Start a chat with the @BotFather Telegram bot; \
 Enter the command “/newbot”; \
