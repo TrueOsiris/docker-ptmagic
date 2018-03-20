@@ -1,9 +1,9 @@
 # docker PT Magic
-Docker Container for the PTMagic plugin for profit trailer. \
+Docker Container for the PTMagic plugin for profit trailer. 
 
 # References
 https://github.com/Legedric/ptmagic \
-https://profittrailer.com/
+https://profittrailer.com/ \
 http://nidkil.me/2018/02/19/pt-magic-setup-on-ubuntu-17-10
 
 # Setup Telegram
