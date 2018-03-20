@@ -16,9 +16,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  
 RUN mkdir -p /opt/pt-magic/ptm-binance \
  && cd /opt/pt-magic/ptm-binance \
- && wget https://github.com/Legedric/ptmagic/releases/download/1.3.1/PTMagic.1.3.1.zip \
+ && wget https://github.com/Legedric/ptmagic/releases/download/1.4.0/PTMagic.1.4.0.zip \
  && unzip *.zip \
- && mv PTMagic\ 1.3.1/* . \
+ && mv PTMagic\ 1.4.0/* . \
  && mv PTMagic/* . \
  && rm *.zip \
  && rmdir PTMagi* \
@@ -29,4 +29,5 @@ VOLUME ["/mnt/profittrailer","/mnt/ptmagic"]
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-# CMD ["/bin/ping", "10.10.0.1"]
+CMD bash
+#CMD ["/bin/ping", "10.10.0.1"]
