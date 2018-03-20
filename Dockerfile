@@ -19,7 +19,9 @@ RUN mkdir -p /opt/pt-magic/ptm-binance-v1.3.1 \
  && wget https://github.com/Legedric/ptmagic/releases/download/1.3.1/PTMagic.1.3.1.zip \
  && unzip *.zip \
  && mv PTMagic\ 1.3.1/* . \
- && mv PTMagic/* .
+ && mv PTMagic/* . \
+ && rm *.zip \
+ && rmdir PTMagic\ * 2>/dev/null 
 
 VOLUME ["/mnt/profittrailer","/mnt/ptmagic"]
 
