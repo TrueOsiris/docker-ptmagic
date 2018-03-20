@@ -21,7 +21,8 @@ RUN mkdir -p /opt/pt-magic/ptm-binance-v1.3.1 \
  && mv PTMagic\ 1.3.1/* . \
  && mv PTMagic/* . \
  && rm *.zip \
- && rmdir PTMagi* 2>/dev/null 
+ && rmdir PTMagi* 2>/dev/null \
+ && cp -r _default\ settings/* .
 
 VOLUME ["/mnt/profittrailer","/mnt/ptmagic"]
 
