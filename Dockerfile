@@ -21,9 +21,12 @@ RUN mkdir -p /opt/pt-magic/ptm-binance \
  && mv PTMagic\ 1.3.1/* . \
  && mv PTMagic/* . \
  && rm *.zip \
- && rmdir PTMagi* 2>/dev/null \
+ && rmdir PTMagi* \
  && cp -r _default\ settings/* .
 
 VOLUME ["/mnt/profittrailer","/mnt/ptmagic"]
 
-CMD ["/bin/ping", "10.10.0.1"]
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod 755 /entrypoint.sh
+ENTRYPOINT["entrypoint.sh"]
+# CMD ["/bin/ping", "10.10.0.1"]
