@@ -17,7 +17,7 @@ RUN mkdir -p /opt/pt-magic/ptm-binance \
  && mv PTMagic\ 1.4.0/* . \
  && mv PTMagic/* . \
  && rm *.zip 
-RUN rmdir PTMagic \* \
+RUN rmdir PTMagic\ * \
  && rmdir PTMagic
 RUN cp -r _default\ settings/* .
 
