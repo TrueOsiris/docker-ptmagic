@@ -14,8 +14,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get update \
  && apt-get install -y dotnet-sdk-2.1.3
  
-RUN mkdir -p /opt/pt-magic/ptm-binance-v1.3.1 \
- && cd /opt/pt-magic/ptm-binance-v1.3.1 \
+RUN mkdir -p /opt/pt-magic/ptm-binance \
+ && cd /opt/pt-magic/ptm-binance \
  && wget https://github.com/Legedric/ptmagic/releases/download/1.3.1/PTMagic.1.3.1.zip \
  && unzip *.zip \
  && mv PTMagic\ 1.3.1/* . \
