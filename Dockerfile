@@ -19,9 +19,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && mv PTMagic\ 1.4.0/* . \
  && mv PTMagic/* . \
  && rm *.zip 
-# RUN rmdir PTMagic\ * \
-# && rmdir PTMagic
-RUN cp -r _default\ settings/* .
+ && cp -r ./\_default\ settings/* .
 
 VOLUME ["/mnt/profittrailer","/mnt/ptmagic"]
 
