@@ -7,11 +7,17 @@
 echo "Copying ProfitTrailer's trading configuration to PTM as base..."
 cp /mnt/profittrailer/trading/* /opt/pt-magic/ptm-binance/_presets/Default/
 if [ ! -f /mnt/ptmagic/settings.analyzer.json ]; then
+  echo "no PTM settings found in /mnt/ptmagic."
+  echo "Copying files from \"_default settings BTC or ETH\"."
   cp -r /opt/pt-magic/ptm-binance/_default\ settings\ BTC\ or\ ETH/* /mnt/ptmagic/
 fi
+echo "Creating symlink to /mnt/ptmagic/Monitor."
 ln -s /mnt/ptmagic/Monitor /opt/pt-magic/ptm-binance/Monitor
+echo "Creating symlink to /mnt/ptmagic/settings.analyzer.json."
 ln -s /mnt/ptmagic/settings.analyzer.json /opt/pt-magic/ptm-binance/settings.analyzer.json
+echo "Creating symlink to /mnt/ptmagic/settings.general.json."
 ln -s /mnt/ptmagic/settings.general.json /opt/pt-magic/ptm-binance/settings.general.json
+echo "Creating symlink to /mnt/ptmagic/nlog.config."
 ln -s /mnt/ptmagic/nlog.config /opt/pt-magic/ptm-binance/nlog.config
 
 # && cp -r '_default settings BTC or ETH'/* ./
