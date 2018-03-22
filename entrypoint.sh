@@ -38,5 +38,6 @@ else
   echo "Creating symlink to /mnt/ptmagic/settings.secure.json in /opt/pt-magic/ptm-binance"
   ln -s /mnt/ptmagic/settings.secure.json /opt/pt-magic/ptm-binance/settings.secure.json
 fi
+cd /opt/pt-magic/ptm-binance
 
 # ping 10.10.0.1 >/dev/null 2>/dev/null
