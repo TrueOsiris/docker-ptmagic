@@ -12,7 +12,7 @@ docker run -d \
    'trueosiris/ptmagic'
 ```
 
-For the monitor, add ./Monitor/Monitor.dll
+For the monitor, launch a second container & add ./Monitor/Monitor.dll
 
 ```bash
 docker run -d \
