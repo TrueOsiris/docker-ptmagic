@@ -7,9 +7,9 @@ docker run -d \
    --name='ptmagic' \
    --net='bridge' \
    -e TZ="Europe/Paris" \
-   -e HOST_OS="unRAID" 
-   -v '/mnt/user/docker/profittrailer/':'/mnt/profittrailer':'rw' 
-   -v '/mnt/user/docker/ptmagic':'/mnt/ptmagic':'rw' 
+   -e HOST_OS="unRAID" \
+   -v '/mnt/user/docker/profittrailer/':'/mnt/profittrailer':'rw' \
+   -v '/mnt/user/docker/ptmagic':'/mnt/ptmagic':'rw' \
    'trueosiris/ptmagic'
 ```
 
