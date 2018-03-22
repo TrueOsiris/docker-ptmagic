@@ -1,12 +1,17 @@
 FROM ubuntu:17.10
 MAINTAINER tim@chaubet.be
 
+ENV TZ 'Europe/Brussels'
+
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
+ && echo $TZ > /etc/timezone \
+ && rm /etc/localtime \
  && apt-get install -y net-tools \
                        iputils-ping \
                        curl \
                        wget \
                        unzip \
+                       tzdata \
  && curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg \
  && mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg \
  && sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-artful-prod artful main" > /etc/apt/sources.list.d/dotnetdev.list' \
@@ -19,7 +24,10 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && mv PTMagic\ 1.4.0/* . \
  && mv PTMagic/* . \
  && rm *.zip \
- && ls -hl
+ && ls -hl \
+ && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
+ && dpkg-reconfigure -f noninteractive tzdata \
+ && apt-get clean
 
 VOLUME ["/mnt/profittrailer","/mnt/ptmagic"]
 
