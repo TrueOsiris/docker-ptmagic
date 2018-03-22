@@ -2,6 +2,8 @@
 
 TZ=${TZ:-"Europe/Brussels"}
 echo "Timezone set to $TZ"
+PARAM=${1:-"PTMagic.dll"}
+echo "Parameter $PARAM passed to entrypoint.sh"
 
 echo "Copying ProfitTrailer's trading configuration to PTM as base"
 cp -r /mnt/profittrailer/trading/* /opt/pt-magic/ptm-binance/_presets/Default/
@@ -39,5 +41,5 @@ else
   ln -s /mnt/ptmagic/settings.secure.json /opt/pt-magic/ptm-binance/settings.secure.json
 fi
 cd /opt/pt-magic/ptm-binance
-
+dotnet $PARAM
 # ping 10.10.0.1 >/dev/null 2>/dev/null
