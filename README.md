@@ -12,6 +12,18 @@ docker run -d \
    'trueosiris/ptmagic'
 ```
 
+For the monitor, add ./Monitor/Monitor.dll
+
+```bash
+docker run -d \
+   --name='ptmagic' \
+   --net='bridge' \
+   -e TZ="Europe/Paris" \
+   -v '/mnt/user/docker/profittrailer/':'/mnt/profittrailer':'rw' \
+   -v '/mnt/user/docker/ptmagic':'/mnt/ptmagic':'rw' \
+   'trueosiris/ptmagic' ./Monitor/Monitor.dll
+```
+
 ## Prerequisites
 - A running profittrailer (I use the docker container rafffael/profit-trailer) 
 - Full profittrailer folder accessibility via the docker volume /mnt/profittrailer
