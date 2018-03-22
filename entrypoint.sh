@@ -1,5 +1,8 @@
 #!/bin/bash
 
+TZ=${TZ:-"Europe/Brussels"}
+echo "Timezone set to $TZ"
+
 echo "Copying ProfitTrailer's trading configuration to PTM as base"
 cp /mnt/profittrailer/trading/* /opt/pt-magic/ptm-binance/_presets/Default/
 if [ ! -f /mnt/ptmagic/settings.analyzer.json ]; then
@@ -20,7 +23,6 @@ echo "Creating symlink to /mnt/ptmagic/nlog.config"
 ln -s /mnt/ptmagic/nlog.config /opt/pt-magic/ptm-binance/nlog.config
 
 echo "Replacing PT Magic Base Path in Monitor/appsettings.json"
-#"PTMagicBasePath": "YOUR PT MAGIC PATH"
-
+sed -i "s#YOUR PT MAGIC PATH#/opt/pt-magic/ptm-binance#g" /mnt/ptmagic/Monitor/appsettings.json
 
 ping 10.10.0.1 >/dev/null 2>/dev/null
