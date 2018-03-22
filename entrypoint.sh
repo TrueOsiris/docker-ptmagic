@@ -31,8 +31,8 @@ sed -i "s#YOUR PROFIT TRAILER PATH#/mnt/profittrailer#g" /mnt/ptmagic/settings.g
 if [ -f /mnt/ptmagic/settings.secure.json ]; then
   echo "settings.secure.json exists in /mnt/ptmagic"
 else
-  echo "Creating settings.secure.json in /mnt/ptmagic"
-  #touch /mnt/ptmagic/settings.secure.json
+  echo "Creating empty settings.secure.json in /mnt/ptmagic"
+  touch /mnt/ptmagic/settings.secure.json
 fi
 if [ -f /opt/pt-magic/ptm-binance/settings.secure.json ]; then
   echo "settings.secure.json exists in /opt/pt-magic/ptm-binance"
