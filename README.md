@@ -2,6 +2,15 @@
 Docker Container for the PTMagic plugin for profit trailer. 
 
 ## Getting Started
+
+To upgrade from another setup (\*nix, win) copy the following files to the path mapped to /mnt/ptmagic:
+- nlog.config
+- settings.analyzer.json
+- settings.general.json
+- settings.secure.json
+- Monitor/appsettings.json to Monitor/appsettings.json
+The ProfitTrailer root should be mapped to /mnt/profittrailer
+
 ```bash
 docker run -d \
    --name='ptmagic' \
