@@ -16,7 +16,7 @@ For the monitor, add ./Monitor/Monitor.dll
 
 ```bash
 docker run -d \
-   --name='ptmagic' \
+   --name='ptmagic-monitor' \
    --net='bridge' \
    -e TZ="Europe/Paris" \
    -v '/mnt/user/docker/profittrailer/':'/mnt/profittrailer':'rw' \
