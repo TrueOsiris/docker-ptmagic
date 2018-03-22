@@ -34,4 +34,4 @@ VOLUME ["/mnt/profittrailer","/mnt/ptmagic"]
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["dotnet", "PTMagic.dll"]
+CMD ["PTMagic.dll"]
