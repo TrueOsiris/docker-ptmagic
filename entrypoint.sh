@@ -11,6 +11,7 @@ if [ ! -f /mnt/ptmagic/settings.analyzer.json ]; then
   echo "Copying files from \"_default settings BTC or ETH\"."
   cp -r /opt/pt-magic/ptm-binance/_default\ settings\ BTC\ or\ ETH/* /mnt/ptmagic/
 fi
+echo "Creating symlinks in /opt/pt-magic/ptm-binance/ ..."
 echo "Creating symlink to /mnt/ptmagic/Monitor/appsettings.json."
 ln -s /mnt/ptmagic/Monitor/appsettings.json /opt/pt-magic/ptm-binance/Monitor/appsettings.json
 echo "Creating symlink to /mnt/ptmagic/settings.analyzer.json."
