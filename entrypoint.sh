@@ -23,9 +23,9 @@ ln -s /mnt/ptmagic/settings.general.json /opt/pt-magic/ptm-binance/settings.gene
 echo "Creating symlink to /mnt/ptmagic/nlog.config in /opt/pt-magic/ptm-binance"
 ln -s /mnt/ptmagic/nlog.config /opt/pt-magic/ptm-binance/nlog.config
 
-echo "Replacing PT Magic base Path in Monitor/appsettings.json"
+echo "Replacing PT Magic base Path in Monitor/appsettings.json with /opt/pt-magic/ptm-binance if it's still the default setting"
 sed -i "s#YOUR PT MAGIC PATH#/opt/pt-magic/ptm-binance#g" /mnt/ptmagic/Monitor/appsettings.json
-echo "Replacing PT base path in settings.general.json"
+echo "Replacing PT base path in settings.general.json with /mnt/profittrailer if it's still the default setting"
 sed -i "s#YOUR PROFIT TRAILER PATH#/mnt/profittrailer#g" /mnt/ptmagic/settings.general.json
 
 if [ -f /mnt/ptmagic/settings.secure.json ]; then
