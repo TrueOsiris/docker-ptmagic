@@ -19,5 +19,8 @@ ln -s /mnt/ptmagic/settings.general.json /opt/pt-magic/ptm-binance/settings.gene
 echo "Creating symlink to /mnt/ptmagic/nlog.config"
 ln -s /mnt/ptmagic/nlog.config /opt/pt-magic/ptm-binance/nlog.config
 
+echo "Replacing PT Magic Base Path in Monitor/appsettings.json"
+#"PTMagicBasePath": "YOUR PT MAGIC PATH"
+
 
 ping 10.10.0.1 >/dev/null 2>/dev/null
