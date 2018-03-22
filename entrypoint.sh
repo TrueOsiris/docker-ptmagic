@@ -12,7 +12,7 @@ if [ ! -f /mnt/ptmagic/settings.analyzer.json ]; then
   cp -r /opt/pt-magic/ptm-binance/_default\ settings\ BTC\ or\ ETH/* /mnt/ptmagic/
 fi
 echo "Creating symlink to /mnt/ptmagic/Monitor."
-ln -s /mnt/ptmagic/Monitor /opt/pt-magic/ptm-binance/Monitor
+ln -s /mnt/ptmagic/Monitor/appsettings.json /opt/pt-magic/ptm-binance/Monitor/appsettings.json
 echo "Creating symlink to /mnt/ptmagic/settings.analyzer.json."
 ln -s /mnt/ptmagic/settings.analyzer.json /opt/pt-magic/ptm-binance/settings.analyzer.json
 echo "Creating symlink to /mnt/ptmagic/settings.general.json."
