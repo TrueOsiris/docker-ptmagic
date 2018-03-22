@@ -32,10 +32,12 @@ if [ -f /mnt/ptmagic/settings.secure.json ]; then
   echo "settings.secure.json exists in /mnt/ptmagic"
 else
   echo "Creating settings.secure.json in /mnt/ptmagic"
-  touch /mnt/ptmagic/settings.secure.json
+  #touch /mnt/ptmagic/settings.secure.json
 fi
 if [ -f /opt/pt-magic/ptm-binance/settings.secure.json ]; then
   echo "settings.secure.json exists in /opt/pt-magic/ptm-binance"
+  mv /opt/pt-magic/ptm-binance/settings.secure.json /mnt/ptmagic/
+  ln -s /mnt/ptmagic/settings.secure.json /opt/pt-magic/ptm-binance/settings.secure.json
 else 
   echo "Creating symlink to /mnt/ptmagic/settings.secure.json in /opt/pt-magic/ptm-binance"
   ln -s /mnt/ptmagic/settings.secure.json /opt/pt-magic/ptm-binance/settings.secure.json
