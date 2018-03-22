@@ -39,4 +39,4 @@ else
   ln -s /mnt/ptmagic/settings.secure.json /opt/pt-magic/ptm-binance/settings.secure.json
 fi
 
-ping 10.10.0.1 >/dev/null 2>/dev/null
+# ping 10.10.0.1 >/dev/null 2>/dev/null
