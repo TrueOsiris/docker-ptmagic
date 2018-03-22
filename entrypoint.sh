@@ -46,4 +46,4 @@ cd /opt/pt-magic/ptm-binance
 echo "Executing \"dotnet $PARAM\""
 dotnet $PARAM
 
-ping 10.10.0.1 >/dev/null 2>/dev/null
+#ping 10.10.0.1 >/dev/null 2>/dev/null
