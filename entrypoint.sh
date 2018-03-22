@@ -1,9 +1,5 @@
 #!/bin/bash
 
-## treat env vars
-
-## hand of to CMD
-
 echo "Copying ProfitTrailer's trading configuration to PTM as base"
 cp /mnt/profittrailer/trading/* /opt/pt-magic/ptm-binance/_presets/Default/
 if [ ! -f /mnt/ptmagic/settings.analyzer.json ]; then
@@ -24,5 +20,4 @@ echo "Creating symlink to /mnt/ptmagic/nlog.config"
 ln -s /mnt/ptmagic/nlog.config /opt/pt-magic/ptm-binance/nlog.config
 
 
-# && cp -r '_default settings BTC or ETH'/* ./
 ping 10.10.0.1 >/dev/null 2>/dev/null
