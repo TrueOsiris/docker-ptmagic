@@ -12,14 +12,13 @@ if [ ! -f /mnt/ptmagic/settings.analyzer.json ]; then
 fi
 echo "Setting rw rights on files in /mnt/ptmagic"
 chmod -R 666 /mnt/ptmagic/*
-echo "Creating symlinks in /opt/pt-magic/ptm-binance/ ..."
-echo "Creating symlink to /mnt/ptmagic/Monitor/appsettings.json"
+echo "Creating symlink to /mnt/ptmagic/Monitor/appsettings.json in /opt/pt-magic/ptm-binance/Monitor"
 ln -s /mnt/ptmagic/Monitor/appsettings.json /opt/pt-magic/ptm-binance/Monitor/appsettings.json
-echo "Creating symlink to /mnt/ptmagic/settings.analyzer.json"
+echo "Creating symlink to /mnt/ptmagic/settings.analyzer.json in /opt/pt-magic/ptm-binance"
 ln -s /mnt/ptmagic/settings.analyzer.json /opt/pt-magic/ptm-binance/settings.analyzer.json
-echo "Creating symlink to /mnt/ptmagic/settings.general.json"
+echo "Creating symlink to /mnt/ptmagic/settings.general.json in /opt/pt-magic/ptm-binance"
 ln -s /mnt/ptmagic/settings.general.json /opt/pt-magic/ptm-binance/settings.general.json
-echo "Creating symlink to /mnt/ptmagic/nlog.config"
+echo "Creating symlink to /mnt/ptmagic/nlog.config in /opt/pt-magic/ptm-binance"
 ln -s /mnt/ptmagic/nlog.config /opt/pt-magic/ptm-binance/nlog.config
 
 echo "Replacing PT Magic base Path in Monitor/appsettings.json"
@@ -27,6 +26,17 @@ sed -i "s#YOUR PT MAGIC PATH#/opt/pt-magic/ptm-binance#g" /mnt/ptmagic/Monitor/a
 echo "Replacing PT base path in settings.general.json"
 sed -i "s#YOUR PROFIT TRAILER PATH#/mnt/profittrailer#g" /mnt/ptmagic/settings.general.json
 
+if [ -f /mnt/ptmagic/settings.secure.json ]; then
+  echo "settings.secure.json exists in /mnt/ptmagic"
+else
+  echo "Creating settings.secure.json in /mnt/ptmagic"
+  touch /mnt/ptmagic/settings.secure.json
+fi
+if [ -f /opt/pt-magic/ptm-binance/settings.secure.json ]; then
+  echo "settings.secure.json exists in /opt/pt-magic/ptm-binance"
+else 
+  echo "Creating symlink to /mnt/ptmagic/settings.secure.json in /opt/pt-magic/ptm-binance"
+  ln -s /mnt/ptmagic/settings.secure.json /opt/pt-magic/ptm-binance/settings.secure.json
 
 
 ping 10.10.0.1 >/dev/null 2>/dev/null
