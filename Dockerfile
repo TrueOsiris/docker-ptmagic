@@ -19,8 +19,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && mv PTMagic\ 1.4.0/* . \
  && mv PTMagic/* . \
  && rm *.zip \
- && ls 
-# && cp -r '_default settings BTC or ETH'/* ./
+ && ls -hl
 
 VOLUME ["/mnt/profittrailer","/mnt/ptmagic"]
 
