@@ -1,15 +1,22 @@
 # docker PT Magic
 Docker Container for the PTMagic plugin for profit trailer. 
 
+## Prerequisites
+- A running profittrailer (I use the docker container rafffael/profit-trailer) 
+- Full profittrailer folder accessibility via the docker volume /mnt/profittrailer
+- Set trading.logHistory = 9999 in ProfitTrailers application.properties
+
 ## Getting Started
 
 To upgrade from another setup (\*nix, win) copy the following files to the path mapped to /mnt/ptmagic:
 - nlog.config
 - settings.analyzer.json
 - settings.general.json
-- settings.secure.json
 - Monitor/appsettings.json to Monitor/appsettings.json
-The ProfitTrailer root should be mapped to /mnt/profittrailer
+- settings.secure.json (optional for Monitor password, if not added, it will create a new file & you will have to set the pass) 
+
+The ProfitTrailer root folder has to be mapped to /mnt/profittrailer via a volume
+The PTMagic config files folder has to be mapped to /mnt/ptmagic
 
 ```bash
 docker run -d \
@@ -32,12 +39,6 @@ docker run -d \
    -v '/mnt/user/docker/ptmagic':'/mnt/ptmagic':'rw' \
    'trueosiris/ptmagic' ./Monitor/Monitor.dll
 ```
-
-## Prerequisites
-- A running profittrailer (I use the docker container rafffael/profit-trailer) 
-- Full profittrailer folder accessibility via the docker volume /mnt/profittrailer
-- Set trading.logHistory = 9999 in ProfitTrailers application.properties
-
 
 ## Extras
 ### Setup Telegram
