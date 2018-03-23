@@ -42,6 +42,25 @@ else
   echo "Creating symlink to /mnt/ptmagic/settings.secure.json in /opt/pt-magic/ptm-binance"
   ln -s /mnt/ptmagic/settings.secure.json /opt/pt-magic/ptm-binance/settings.secure.json
 fi
+
+### get _data to volume for separate monitor container ###
+
+if [ -L "/opt/pt-magic/ptm-binance/_data" ]; then
+  if [ -d "/mnt/ptmagic/_data" ]; then 
+    echo "/mnt/ptmagic/_data exists"
+    echo "/opt/pt-magic/ptm-binance/_data is a symlink, which is good"
+  else 
+    echo "/mnt/ptmagic/_data does not exist"
+    echo "/opt/pt-magic/ptm-binance/_data is a symlink, which is NOT good, since /mnt/ptmagic/_data is not there"
+  fi 
+  ls -hl /opt/pt-magic/ptm-binance/ | grep data
+else
+  echo "/opt/pt-magic/ptm-binance/_data is a directory. Moving to volume, removing original, creating symlink"
+  mv /opt/pt-magic/ptm-binance/_data /mnt/ptmagic/
+  rm -R /opt/pt-magic/ptm-binance/_data
+  ln -s /mnt/ptmagic/_data /opt/pt-magic/ptm-binance/_data
+fi
+
 cd /opt/pt-magic/ptm-binance
 echo "Executing \"dotnet $PARAM\""
 dotnet $PARAM
