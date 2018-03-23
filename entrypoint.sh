@@ -47,23 +47,23 @@ fi
 
 if [ -d "/opt/pt-magic/ptm-binance/_data" ]; then
   echo "/opt/pt-magic/ptm-binance/_data exists"
-  if [ -L "/opt/pt-magic/ptm-binance/_data" ]; then
-    if [ -d "/mnt/ptmagic/_data" ]; then 
-      echo "/mnt/ptmagic/_data exists"
-      echo "/opt/pt-magic/ptm-binance/_data is a symlink, which is good"
-    else 
-      echo "/mnt/ptmagic/_data does not exist"
-      echo "/opt/pt-magic/ptm-binance/_data is a symlink, which is NOT good, since /mnt/ptmagic/_data is not there"
-    fi 
-    ls -hl /opt/pt-magic/ptm-binance/ | grep data
-  else
-    echo "/opt/pt-magic/ptm-binance/_data is a directory. Moving to volume, removing original, creating symlink"
-    mv /opt/pt-magic/ptm-binance/_data /mnt/ptmagic/
-    rm -R /opt/pt-magic/ptm-binance/_data
-    ln -s /mnt/ptmagic/_data /opt/pt-magic/ptm-binance/_data
-  fi
-else 
+else
   echo "/opt/pt-magic/ptm-binance/_data does not exist"
+fi
+if [ -L "/opt/pt-magic/ptm-binance/_data" ]; then
+  if [ -d "/mnt/ptmagic/_data" ]; then 
+    echo "/mnt/ptmagic/_data exists"
+    echo "/opt/pt-magic/ptm-binance/_data is a symlink, which is good"
+  else 
+    echo "/mnt/ptmagic/_data does not exist"
+    echo "/opt/pt-magic/ptm-binance/_data is a symlink, which is NOT good, since /mnt/ptmagic/_data is not there"
+  fi 
+  ls -hl /opt/pt-magic/ptm-binance/ | grep data
+else
+  echo "/opt/pt-magic/ptm-binance/_data is a directory. Moving to volume, removing original, creating symlink"
+  mv /opt/pt-magic/ptm-binance/_data /mnt/ptmagic/
+  rm -R /opt/pt-magic/ptm-binance/_data
+  ln -s /mnt/ptmagic/_data /opt/pt-magic/ptm-binance/_data
 fi
 
 cd /opt/pt-magic/ptm-binance
