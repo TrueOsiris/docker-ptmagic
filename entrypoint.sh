@@ -33,6 +33,13 @@ if [ -f /mnt/ptmagic/settings.secure.json ]; then
 else
   echo "Creating empty settings.secure.json in /mnt/ptmagic"
   touch /mnt/ptmagic/settings.secure.json
+  cat > /mnt/ptmagic/settings.secure.json << EOL
+  {
+   "SecureSettings": {
+    "MonitorPassword": ""
+   }
+  }
+  EOL
 fi
 if [ -f /opt/pt-magic/ptm-binance/settings.secure.json ]; then
   echo "settings.secure.json exists in /opt/pt-magic/ptm-binance"
