@@ -8,7 +8,9 @@ Docker Container for the PTMagic plugin for profit trailer.
 
 ## Getting Started
 
-To upgrade from another setup (\*nix, win) copy the following files to the path mapped to /mnt/ptmagic:
+When starting this PT Magic docker fresh, config files will be copied from "\_default\ settings\ BTC\ or\ ETH" to the /mnt/ptmagic volume.
+
+To upgrade from another setup (\*nix, win) copy the following files to the /mnt/ptmagic volume:
 - nlog.config
 - settings.analyzer.json
 - settings.general.json
