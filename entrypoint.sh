@@ -44,7 +44,6 @@ else
 fi
 
 ### get _data to volume for separate monitor container ###
-
 if [ -d "/opt/pt-magic/ptm-binance/_data" ]; then
   echo "/opt/pt-magic/ptm-binance/_data exists"
   if [ -L "/opt/pt-magic/ptm-binance/_data" ]; then
