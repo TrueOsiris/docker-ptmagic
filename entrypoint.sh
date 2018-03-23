@@ -73,6 +73,7 @@ else
   echo "Creating symlink from /mnt/ptmagic/_data to /opt/pt-magic/ptm-binance/_data"
   ln -s /mnt/ptmagic/_data /opt/pt-magic/ptm-binance/_data
 fi
+chmod -R 666 /mnt/ptmagic/*
 
 cd /opt/pt-magic/ptm-binance
 echo "Executing \"dotnet $PARAM\""
