@@ -31,6 +31,7 @@ docker run -d \
 ```
 
 For the monitor, launch a second container & add ./Monitor/Monitor.dll
+This container will not start until PT Magic has created its first result, so be patient.
 
 ```bash
 docker run -d \
