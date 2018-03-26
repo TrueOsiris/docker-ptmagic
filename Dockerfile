@@ -1,8 +1,9 @@
 FROM ubuntu:17.10
 MAINTAINER tim@chaubet.be
-LABEL ptmagic.version="1.4.0"
+LABEL docker-ptmagic.version="1.0"
 
 ENV TZ 'Europe/Brussels'
+ENV PG_VERSION 1.4.0
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && echo $TZ > /etc/timezone \
@@ -21,9 +22,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
                        aspnetcore-store-2.0.6 \
  && mkdir -p /opt/pt-magic/ptm-binance \
  && cd /opt/pt-magic/ptm-binance \
- && wget https://github.com/Legedric/ptmagic/releases/download/1.4.0/PTMagic.1.4.0.zip \
+ && wget https://github.com/Legedric/ptmagic/releases/download/$PG_VERSION/PTMagic.$PG_VERSION.zip \
  && unzip *.zip \
- && mv PTMagic\ 1.4.0/* . \
+ && mv PTMagic\ $PG_VERSION/* . \
  && mv PTMagic/* . \
  && rm *.zip \
  && ls -hl \
