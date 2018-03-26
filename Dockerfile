@@ -1,5 +1,6 @@
 FROM ubuntu:17.10
 MAINTAINER tim@chaubet.be
+LABEL ptmagic.version="1.4.0"
 
 ENV TZ 'Europe/Brussels'
 
