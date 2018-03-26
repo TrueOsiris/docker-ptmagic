@@ -25,6 +25,7 @@ docker run -d \
    --name='ptmagic' \
    --net='bridge' \
    -e TZ="Europe/Paris" \
+   -e PG_VERSION="1.4.0" \
    -v '/mnt/user/docker/profittrailer/':'/mnt/profittrailer':'rw' \
    -v '/mnt/user/docker/ptmagic':'/mnt/ptmagic':'rw' \
    'trueosiris/ptmagic'
@@ -38,6 +39,7 @@ docker run -d \
    --name='ptmagic-monitor' \
    --net='bridge' \
    -e TZ="Europe/Paris" \
+   -e PG_VERSION="1.4.0" \
    -v '/mnt/user/docker/profittrailer/':'/mnt/profittrailer':'rw' \
    -v '/mnt/user/docker/ptmagic':'/mnt/ptmagic':'rw' \
    'trueosiris/ptmagic' ./Monitor/Monitor.dll
