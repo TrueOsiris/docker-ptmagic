@@ -4,7 +4,7 @@ LABEL docker-ptmagic.version="1.0"
 ADD VERSION .
 
 ENV TZ 'Europe/Brussels'
-ENV PG_VERSION 1.4.0
+ENV PG_VERSION 1.5.1
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && echo $TZ > /etc/timezone \
