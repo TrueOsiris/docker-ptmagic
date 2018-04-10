@@ -5,6 +5,7 @@ ADD VERSION .
 
 ENV TZ 'Europe/Brussels'
 ENV PG_VERSION 1.5.1
+# to be fixed: the zip is pulled in the dockerfile. changing the version won't change the zipfile from the default.
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && echo $TZ > /etc/timezone \
