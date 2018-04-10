@@ -21,8 +21,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && apt-get update \
  && apt-get install -y dotnet-sdk-2.1.3 \
                        aspnetcore-store-2.0.6 \
- && mkdir -p /opt/pt-magic/ptm-binance \
- && cd /opt/pt-magic/ptm-binance \
+ && mkdir -p /opt/pt-magic/ptm-binance 
+ 
+RUN cd /opt/pt-magic/ptm-binance \
  && wget https://github.com/Legedric/ptmagic/releases/download/$PG_VERSION/PTMagic.$PG_VERSION.zip \
  && unzip *.zip \
  && mv PTMagic\ $PG_VERSION/* . \
