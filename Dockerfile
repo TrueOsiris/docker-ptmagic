@@ -1,6 +1,6 @@
 FROM ubuntu:17.10
 MAINTAINER tim@chaubet.be
-LABEL docker-ptmagic.version="1.0"
+LABEL docker-ptmagic.version="1.5.1"
 ADD VERSION .
 
 ENV TZ 'Europe/Brussels'
