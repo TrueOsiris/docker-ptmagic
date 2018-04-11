@@ -10,7 +10,6 @@ ENV PG_VERSION 1.5.1
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && echo $TZ > /etc/timezone \
  && rm /etc/localtime \
- && apt-get dist-upgrade -y \
  && apt-get install -y net-tools \
                        iputils-ping \
                        curl \
@@ -22,12 +21,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-artful-prod artful main" > /etc/apt/sources.list.d/dotnetdev.list' \
  && apt-get update 
  
-RUN wget -q packages-microsoft-prod.deb https://packages.microsoft.com/config/ubuntu/17.10/packages-microsoft-prod.deb \
- && dpkg -i packages-microsoft-prod.deb
+#RUN wget -q packages-microsoft-prod.deb https://packages.microsoft.com/config/ubuntu/17.10/packages-microsoft-prod.deb \
+# && dpkg -i packages-microsoft-prod.deb
  
-#RUN apt-get install -y dotnet-sdk-2.1.3 \
-#                       aspnetcore-store-2.0.6 \
-
+RUN apt-get install -y dotnet-sdk-2.1.3 \
+                       aspnetcore-store-2.0.6 
+                       
 RUN mkdir -p /opt/pt-magic/ptm-binance 
  && cd /opt/pt-magic/ptm-binance \
  && wget https://github.com/Legedric/ptmagic/releases/download/$PG_VERSION/PTMagic.$PG_VERSION.zip \
