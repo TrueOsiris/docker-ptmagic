@@ -24,7 +24,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
 #RUN wget -q packages-microsoft-prod.deb https://packages.microsoft.com/config/ubuntu/17.10/packages-microsoft-prod.deb \
 # && dpkg -i packages-microsoft-prod.deb
  
-RUN apt-get install -y dotnet-sdk-2.1.3 \
+RUN apt-get install -y dotnet-sdk-2.1.4 \
                        aspnetcore-store-2.0.6 
                        
 RUN mkdir -p /opt/pt-magic/ptm-binance 
