@@ -1,10 +1,10 @@
 FROM ubuntu:17.10
 MAINTAINER tim@chaubet.be
-LABEL docker-ptmagic.version="1.5.1"
+LABEL docker-ptmagic.version="1.5.2"
 ADD VERSION .
 
 ENV TZ 'Europe/Brussels'
-ENV PG_VERSION 1.5.1
+ENV PG_VERSION 1.5.2
 # to be fixed: the zip is pulled in the dockerfile. changing the version won't change the zipfile from the default.
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
