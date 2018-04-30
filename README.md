@@ -1,6 +1,6 @@
 # docker PT Magic
 Docker Container for the PTMagic plugin for profit trailer. 
-### Version 1.5.2
+### Version 1.6.1
 
 ## Prerequisites
 - A running profittrailer (I use the docker container rafffael/profit-trailer) 
