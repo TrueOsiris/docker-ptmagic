@@ -11,7 +11,7 @@ if [ ! -f /mnt/ptmagic/settings.analyzer.json ]; then
   echo "no PTM settings found in /mnt/ptmagic"
   echo "Copying files from \"_default settings BTC or ETH\""
   #cp -r /opt/pt-magic/ptm-binance/_default\ settings\ BTC\ or\ ETH/* /mnt/ptmagic/
-  cp -r /opt/pt-magic/ptm-binance/_default\ settings\ PT\ 1.x/_default\ settings\ BTC\ or\ ETH/* /mnt/ptmagic/
+  cp -r /opt/pt-magic/ptm-binance/_default\ settings\ PT\ 2.x/_default\ settings\ BTC\ or\ ETH/* /mnt/ptmagic/
 fi
 echo "Setting rw rights on files in /mnt/ptmagic"
 chmod -R 666 /mnt/ptmagic/*
