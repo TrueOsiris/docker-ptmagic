@@ -82,6 +82,9 @@ else
 fi
 chmod -R 666 /mnt/ptmagic/*
 
+# make sure default config files (PAIRS.properties, ...) are found in trading folder of profittrailer.
+ln -s /mnt/profittrailer/initialization /mnt/profittrailer/trading
+
 cd /opt/pt-magic/ptm-binance
 echo "Executing \"dotnet $PARAM\""
 dotnet $PARAM
