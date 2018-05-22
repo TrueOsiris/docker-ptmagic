@@ -10,7 +10,7 @@ ENV PG_VERSION 2.0.0
 RUN mkdir -p /opt/pt-magic/ptm-binance \
  && cd /opt/pt-magic/ptm-binance \ 
  && wget https://github.com/Legedric/ptmagic/releases/download/$PG_VERSION/PTMagic.$PG_VERSION.zip \
- && unzip *.zip \
+ && unzip -o *.zip \
  && mv PTMagic\ $PG_VERSION/* . \
  && mv PTMagic/* . \
  && rm *.zip 
