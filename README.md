@@ -1,9 +1,9 @@
 # docker PT Magic
 Docker Container for the PTMagic plugin for profit trailer. 
-### Version 2.0.0
+### Version 2.0.1
 
 ## Prerequisites
-- A running profittrailer (I use the docker container rafffael/profit-trailer) 
+- A running profittrailer (I use my own fork of the docker container rafffael/profit-trailer) 
 - Full profittrailer folder accessibility via the docker volume /mnt/profittrailer
 - Set trading.logHistory = 9999 in ProfitTrailers application.properties
 
