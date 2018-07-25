@@ -2,7 +2,7 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/trueosiris/ptmagic.svg)](https://hub.docker.com/r/trueosiris/ptmagic/) [![Docker Stars](https://img.shields.io/docker/stars/trueosiris/ptmagic.svg)](https://hub.docker.com/r/trueosiris/ptmagic/) [![Docker Automated buil](https://img.shields.io/docker/automated/trueosiris/ptmagic.svg)](https://hub.docker.com/r/trueosiris/ptmagic/) [![Docker Build Statu](https://img.shields.io/docker/build/trueosiris/ptmagic.svg)](https://hub.docker.com/r/trueosiris/ptmagic/) ![GitHub last commit](https://img.shields.io/github/last-commit/trueosiris/docker-ptmagic.svg)
 
 Docker Container for the PTMagic plugin for profit trailer. 
-### Version 2.0.1
+### Version 2.0.3
 
 ## Prerequisites
 - A running profittrailer (I use my own fork of the docker container rafffael/profit-trailer) 
